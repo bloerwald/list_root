@@ -201,7 +201,9 @@ namespace
           auto it (hash_to_filename.find (entry.FileNameHash));
           if (it != hash_to_filename.end())
           {
-            entry.filename = it->second;
+            std::stringstream stream;
+            stream << it->second <<  " __KNOWN__" << std::setfill ('0') << std::setw (sizeof(entry.FileNameHash) * 2) << std::hex << entry.FileNameHash;
+            entry.filename = stream.str();
             entry.is_real_filename = true;
           }
           else

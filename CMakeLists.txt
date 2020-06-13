@@ -17,3 +17,5 @@ extended_add_library (NAME lookup3 SOURCES "lookup3.cpp" INCLUDE_DIRECTORIES ${C
 set_property (TARGET lookup3 APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR})
 
 extended_add_executable (NAME list_root SOURCES "list_root.cpp" LIBRARIES lookup3 Boost::filesystem Boost::system)
+
+extended_add_executable (NAME jenkins SOURCES "jenkins.cpp" LIBRARIES lookup3)
